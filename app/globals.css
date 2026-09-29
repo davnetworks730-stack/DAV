@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-cream text-ink font-sans antialiased; }
+  a { @apply text-orange no-underline; }
+  a:hover { @apply text-orange-dark; }
+  button { cursor: pointer; }
+}
+
+@layer components {
+  .container-site { @apply mx-auto max-w-site px-5; }
+  .section-y { @apply py-[clamp(56px,9vw,88px)]; }
+  .eyebrow { @apply text-[13px] font-bold uppercase tracking-[2px] text-orange; }
+  .h2 { @apply mt-3.5 font-display font-black leading-none tracking-[-1px] [word-spacing:0.08em]; }
+  .btn { @apply inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full font-bold transition-colors; }
+  .btn-wa { @apply btn bg-wa font-extrabold text-wa-ink hover:bg-wa-dark hover:text-wa-ink; }
+  .btn-navy { @apply btn bg-navy text-white hover:bg-orange hover:text-white; }
+  .btn-orange { @apply btn bg-orange text-white hover:bg-orange-dark hover:text-white; }
+  .btn-outline-navy { @apply btn border-[1.5px] border-navy text-navy hover:bg-navy hover:text-white; }
+  .wa-dot { @apply inline-block h-[9px] w-[9px] shrink-0 rounded-full bg-wa-ink; }
+  .stripe-light { background: repeating-linear-gradient(135deg, #EFE8DE 0 12px, #E8E0D4 12px 24px); }
+  .stripe-dark { background: repeating-linear-gradient(135deg, #1B3570 0 12px, #18306A 12px 24px); }
+  .img-label { @apply rounded-md px-2.5 py-1.5 font-mono text-[13px]; }
+}
