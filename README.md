@@ -15,11 +15,11 @@ npm run build && npm start         # production
 - `app/page.js` — page sections
 - `components/Header.jsx` — sticky header + mobile menu
 - `components/Faq.jsx` — accordion
-- `components/LeadGate.jsx` — name/phone/email popup shown before any Call or WhatsApp click; posts to Google Sheets, remembers the visitor in localStorage
+- `components/LeadGate.jsx` — name/phone/email popup shown before any Call or WhatsApp click; posts to every Google Sheet in `SHEET_ENDPOINTS`, remembers the visitor in localStorage
 - `tailwind.config.js` — brand colors, fonts, breakpoints (`sheet` 600, `nav` 900, `plans` 1100)
 
 ## Images
 Replace the striped placeholders in `app/page.js` with `next/image` using files in `/public` (hero, router, lifestyle).
 
 ## Deploy
-Push to GitHub and import in Vercel. Set `NEXT_PUBLIC_PHONE` and `NEXT_PUBLIC_SHEET_ENDPOINT` in the project's environment variables if you want to override the defaults.
+Push to GitHub and import in Vercel. Set `NEXT_PUBLIC_PHONE` and `NEXT_PUBLIC_SHEET_ENDPOINTS` (comma-separated) in the project's environment variables if you want to override the defaults.

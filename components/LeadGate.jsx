@@ -1,14 +1,17 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { PHONE, SHEET_ENDPOINT } from '@/lib/site';
+import { PHONE, SHEET_ENDPOINTS } from '@/lib/site';
 
 const STORAGE_KEY = 'dav_lead';
 const msgFrom = (href) => { const m = href.match(/[?&]text=([^&]*)/); return m ? decodeURIComponent(m[1]) : ''; };
 
 function logLead(data) {
   const payload = { ...data, page: window.location.href, submittedAt: new Date().toISOString() };
-  if (!SHEET_ENDPOINT) { console.info('[DAV lead] endpoint not set:', payload); return Promise.resolve(); }
-  return fetch(SHEET_ENDPOINT, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) });
+  if (!SHEET_ENDPOINTS.length) { console.info('[DAV lead] endpoint not set:', payload); return Promise.resolve(); }
+  const body = JSON.stringify(payload);
+  return Promise.allSettled(
+    SHEET_ENDPOINTS.map((u) => fetch(u, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body }))
+  ).then((r) => { if (r.every((x) => x.status === 'rejected')) throw new Error('All sheet requests failed'); });
 }
 
 const inputCls = 'min-h-[50px] rounded-xl border-[1.5px] border-line-strong bg-white px-4 py-3.5 text-base text-ink outline-none focus:border-orange';

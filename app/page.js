@@ -5,7 +5,6 @@ import {
   PHONE, EMAIL, telHref, waHref, waRouter, waArea,
   plans, useCases, factors, why, areas, steps, testimonials, SHOW_TESTIMONIALS,
 } from '@/lib/site';
-import Image from 'next/image';
 
 function SectionHead({ eyebrow, title, accent, text, br = false }) {
   return (
@@ -66,9 +65,8 @@ export default function Home() {
             </div>
             <div className="relative">
               {/* Replace with <Image src="/hero.jpg" fill className="object-cover" /> */}
-              <div className="stripe-light flex aspect-[5/4] items-center overflow-hidden justify-center rounded-[28px] border border-line-strong">
+              <div className="stripe-light flex aspect-[5/4] items-center justify-center rounded-[28px] border border-line-strong">
                 <span className="img-label bg-cream text-[#8A8270]">hero photo — family streaming at home</span>
-                <Image src="/hero.jpg" fill className="object-cover" />
               </div>
               <div className="absolute -bottom-[18px] left-3 flex items-center gap-3.5 rounded-[18px] bg-navy px-5 py-4 text-white shadow-[0_18px_40px_rgba(18,41,92,0.25)]">
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-orange font-display font-black italic">∞</div>
@@ -147,9 +145,9 @@ export default function Home() {
         {/* Router */}
         <section id="router" className="scroll-mt-20 bg-navy text-white">
           <div className="container-site section-y grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-center gap-14">
-            <div className=" flex aspect-[5/4] items-center overflow-hidden justify-center rounded-[28px] border">
-                <img src="/router.webp" fill className="" />
-              </div>
+            <div className="stripe-dark flex aspect-square w-full max-w-[460px] items-center justify-center rounded-3xl border border-navy-line">
+              <span className="img-label bg-navy text-navy-mute">router product shot</span>
+            </div>
             <div>
               <div className="eyebrow text-orange-peach">Meet your next router</div>
               <h2 className="h2 text-[clamp(34px,4.4vw,52px)]">A better-connected home <span className="italic text-orange-light">starts here.</span></h2>
@@ -181,10 +179,8 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-20 grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-center gap-12">
-              <div className="stripe-light flex aspect-[16/10] items-center justify-center rounded-3xl border overflow-hidden border-line-strong">
-                {/* <span className="img-label bg-cream text-[#8A8270]">lifestyle photo — customer on phone</span> */}
-                <img src="/why.jpg" fill className="object-cover" />
-                
+              <div className="stripe-light flex aspect-[16/10] items-center justify-center rounded-3xl border border-line-strong">
+                <span className="img-label bg-cream text-[#8A8270]">lifestyle photo — customer on phone</span>
               </div>
               <div className="flex flex-col gap-8">
                 <div>
@@ -321,7 +317,7 @@ export default function Home() {
           </div>
           <div className="mt-12 flex flex-wrap justify-between gap-3 border-t border-navy-rule pt-[22px] text-[13px]">
             <span>© {new Date().getFullYear()} DAV Networks. All rights reserved.</span>
-            <span>Engineered by {"</>"}.</span>
+            <span>Built for life at full speed.</span>
           </div>
         </div>
       </footer>
