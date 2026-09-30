@@ -19,7 +19,7 @@ npm run build && npm start         # production
 - `tailwind.config.js` — brand colors, fonts, breakpoints (`sheet` 600, `nav` 900, `plans` 1100)
 
 ## Images
-Replace the striped placeholders in `app/page.js` with `next/image` using files in `/public` (hero, router, lifestyle).
+Place `hero.jpg`, `router.webp` and `why.jpg` in `/public` — they are loaded via `next/image` in `app/page.js`.
 
 ## Deploy
 Push to GitHub and import in Vercel. Set `NEXT_PUBLIC_PHONE` and `NEXT_PUBLIC_SHEET_ENDPOINTS` (comma-separated) in the project's environment variables if you want to override the defaults.

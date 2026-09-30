@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Header, { Logo } from '@/components/Header';
 import Faq from '@/components/Faq';
 import LeadGate from '@/components/LeadGate';
@@ -64,9 +65,8 @@ export default function Home() {
               </div>
             </div>
             <div className="relative">
-              {/* Replace with <Image src="/hero.jpg" fill className="object-cover" /> */}
-              <div className="stripe-light flex aspect-[5/4] items-center justify-center rounded-[28px] border border-line-strong">
-                <span className="img-label bg-cream text-[#8A8270]">hero photo — family streaming at home</span>
+              <div className="relative aspect-[5/4] overflow-hidden rounded-[28px] border border-line-strong bg-sand">
+                <Image src="/hero.jpg" alt="Family enjoying fast home internet" fill priority sizes="(min-width: 1000px) 600px, 100vw" className="object-cover" />
               </div>
               <div className="absolute -bottom-[18px] left-3 flex items-center gap-3.5 rounded-[18px] bg-navy px-5 py-4 text-white shadow-[0_18px_40px_rgba(18,41,92,0.25)]">
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-orange font-display font-black italic">∞</div>
@@ -145,8 +145,8 @@ export default function Home() {
         {/* Router */}
         <section id="router" className="scroll-mt-20 bg-navy text-white">
           <div className="container-site section-y grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-center gap-14">
-            <div className="stripe-dark flex aspect-square w-full max-w-[460px] items-center justify-center rounded-3xl border border-navy-line">
-              <span className="img-label bg-navy text-navy-mute">router product shot</span>
+            <div className="relative aspect-square w-full max-w-[460px] overflow-hidden rounded-3xl border border-navy-line bg-navy-deep">
+              <Image src="/router.webp" alt="DAV Networks dual-band Wi-Fi router" fill sizes="(min-width: 900px) 460px, 100vw" className="object-contain p-6" />
             </div>
             <div>
               <div className="eyebrow text-orange-peach">Meet your next router</div>
@@ -179,8 +179,8 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-20 grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-center gap-12">
-              <div className="stripe-light flex aspect-[16/10] items-center justify-center rounded-3xl border border-line-strong">
-                <span className="img-label bg-cream text-[#8A8270]">lifestyle photo — customer on phone</span>
+              <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-line-strong bg-sand">
+                <Image src="/why.jpg" alt="Happy DAV Networks customer" fill sizes="(min-width: 1000px) 600px, 100vw" className="object-cover" />
               </div>
               <div className="flex flex-col gap-8">
                 <div>
